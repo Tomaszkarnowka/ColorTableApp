@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Products from './Products';
+import Products from '../Products/Products';
 import '@testing-library/jest-dom';
 
 it('renders loader', () => {

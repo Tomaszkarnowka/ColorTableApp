@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import ProductsPagination from './ProductsPagination';
+import ProductsPagination from '../Products/ProductsPagination';
 import '@testing-library/jest-dom';
 
 const totalPages = 2;
