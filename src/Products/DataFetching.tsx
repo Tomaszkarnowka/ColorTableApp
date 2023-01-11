@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { createSearchParams, useSearchParams } from 'react-router-dom';
-import axios from 'axios';
 import Products, { type Product } from './Products';
 import ProductsPagination from './ProductsPagination';
 import classes from './DataFetching.module.css';
@@ -21,13 +20,15 @@ const DataFetching = () => {
       setLoading(true);
       try {
         const idParam = search ? `&id=${search}` : '';
-        const res = await axios.get(
+        const res = await fetch(
           `${API_URL}/products?per_page=${PRODUCTS_PER_PAGE}&page=${currentPage}${idParam}`
         );
-        const products = res.data.data;
-        setProducts(Array.isArray(products) ? products : [products]);
+        const products = await res.json();
+        setProducts(
+          Array.isArray(products.data) ? products.data : [products.data]
+        );
 
-        setTotalPages(res.data.total_pages);
+        setTotalPages(products.total_pages);
       } catch (error) {
         console.error(error);
       } finally {
@@ -58,6 +59,7 @@ const DataFetching = () => {
         <input
           type="text"
           placeholder="Search"
+          data-testid="searchBar"
           onChange={(e) => {
             setSearchParams(createSearchParams({ id: e.target.value }));
             setSearch(e.target.value);
