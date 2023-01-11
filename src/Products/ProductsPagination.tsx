@@ -23,6 +23,7 @@ const ProductsPagination = ({
             currentPage === 1 && classes.inactive
           }`}
           onClick={prevPage}
+          data-testid="prev"
         >
           prev
         </button>
@@ -49,6 +50,7 @@ const ProductsPagination = ({
             currentPage === totalPages && classes.inactive
           }`}
           onClick={nextPage}
+          data-testid="next"
         >
           next
         </button>
