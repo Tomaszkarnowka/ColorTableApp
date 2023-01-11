@@ -8,16 +8,17 @@
 
 .search {
   height: 5vh;
-  margin-bottom: 15vh;
+  margin-bottom: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  position: fixed;
 }
 
 .search h1 {
   font-size: 4em;
-  margin-top: 5vh;
+  margin-bottom: 1vh;
 }
 .searchTerm {
   width: 15vw;

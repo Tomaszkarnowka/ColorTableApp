@@ -14,11 +14,11 @@ type Props = {
 
 const Products = ({ products, isLoading = false }: Props) => {
   if (isLoading) {
-    return <h2>Loading...</h2>;
+    return <h2 className={classes.loading}>Loading...</h2>;
   }
 
   return (
-    <div>
+    <div className={classes.table_container}>
       <table className={classes.table_fill}>
         <thead>
           <tr>

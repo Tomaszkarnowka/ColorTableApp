@@ -1,6 +1,7 @@
 .pagination_wrapper {
-  margin-top: 10vh;
+  margin-top: 80vh;
   text-align: center;
+  position: fixed;
 }
 
 .pagination {
